@@ -68,10 +68,7 @@ The website will provide information about the products and services available a
 
 Product categories include:
 
-* Caps
-* Clothing
 * Shoes
-* Laptops
 * iPhones
 
 ### 4. Shoe Size Selection
@@ -201,11 +198,11 @@ Best-Quality-Store/
           |                |                |
         Home             About           Services
           |                                 |
-          |                    +------------+------------+
-          |                    |      |      |      |
-          |                  Caps  Clothing Shoes Laptops
-          |                                      |
-          |                                    iPhones
+          |                           +-----+------+
+          |                           |            |
+          |                        Shoes        iPhone
+          |                                      
+          |                                   
           |
      +----+-------+
      |            |
