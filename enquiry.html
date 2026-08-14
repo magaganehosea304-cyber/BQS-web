@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Best Quality Store | Enquiry</title>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header>
+
+        <p>
+            <img src="Images/Logo.jpg"
+                 alt="Best Quality Store Logo"
+                 width="120">
+        </p>
+
+        <h1>Make an Enquiry</h1>
+
+        <p>
+            <em>Tell us what you are looking for.</em>
+        </p>
+
+        <hr>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================= -->
+
+    <nav>
+
+        <p>
+            <a href="index.html">Home</a>
+            &nbsp; | &nbsp;
+            <a href="about.html">About</a>
+            &nbsp; | &nbsp;
+            <a href="services.html">Products</a>
+            &nbsp; | &nbsp;
+            <a href="enquiry.html">Enquiry</a>
+            &nbsp; | &nbsp;
+            <a href="contact.html">Contact</a>
+        </p>
+
+    </nav>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================= -->
+
+    <main>
+
+        <section>
+
+            <h2>Product Enquiry Form</h2>
+
+            <p>
+                Complete the form below and we will contact you.
+            </p>
+
+            <hr>
+
+            <form>
+
+                <!-- Personal Information -->
+                <section>
+
+                    <h3>Personal Information</h3>
+
+                    <p>
+
+                        <label for="fullname">
+                            Full Name:
+                        </label>
+
+                        <br>
+
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               placeholder="Enter your full name">
+
+                    </p>
+
+                    <p>
+
+                        <label for="email">
+                            Email Address:
+                        </label>
+
+                        <br>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email address">
+
+                    </p>
+
+                    <p>
+
+                        <label for="phone">
+                            Telephone Number:
+                        </label>
+
+                        <br>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="Enter your phone number">
+
+                    </p>
+
+                </section>
+
+                <!-- Order Information -->
+                <section>
+
+                    <h3>Order Information</h3>
+
+                    <p>
+
+                        <label for="quantity">
+                            Number of Items:
+                        </label>
+
+                        <br>
+
+                        <input type="number"
+                               id="quantity"
+                               name="quantity"
+                               min="1"
+                               max="25">
+
+                    </p>
+
+                    <p>
+
+                        <label for="product">
+                            Product:
+                        </label>
+
+                        <br>
+
+                        <select id="product"
+                                name="product">
+
+                            <option value="shoes">
+                                Shoes
+                            </option>
+
+                            <option value="iphone">
+                                iPhone
+                            </option>
+
+                        </select>
+
+                    </p>
+
+                </section>
+
+                <!-- Contact Preferences -->
+                <section>
+
+                    <h3>Contact Preferences</h3>
+
+                    <p>
+                        Preferred Contact Method:
+                    </p>
+
+                    <input type="radio"
+                           id="emailcontact"
+                           name="contactmethod"
+                           value="email">
+
+                    <label for="emailcontact">
+                        Email
+                    </label>
+
+                    <br>
+
+                    <input type="radio"
+                           id="phonecontact"
+                           name="contactmethod"
+                           value="phone">
+
+                    <label for="phonecontact">
+                        Telephone
+                    </label>
+
+                </section>
+
+                <hr>
+
+                <!-- Additional Services -->
+                <section>
+
+                    <h3>Would you like...</h3>
+
+                    <p>
+
+                        <input type="radio"
+                               id="delivery"
+                               name="services"
+                               value="delivery">
+
+                        <label for="delivery">
+                            Delivery
+                        </label>
+
+                        <br>
+
+                        <input type="radio"
+                               id="pickup"
+                               name="services"
+                               value="pickup">
+
+                        <label for="pickup">
+                            Pickup
+                        </label>
+
+                    </p>
+
+                </section>
+
+                <hr>
+
+                <!-- Message -->
+                <section>
+
+                    <h3>Additional Information</h3>
+
+                    <p>
+
+                        <label for="message">
+                            Message:
+                        </label>
+
+                        <br>
+
+                        <textarea id="message"
+                                  name="message"
+                                  rows="6"
+                                  cols="40"
+                                  placeholder="Enter your message here"></textarea>
+
+                    </p>
+
+                </section>
+
+                <!-- Submit -->
+                <p>
+
+                    <button type="submit">
+                        Submit Enquiry
+                    </button>
+
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <hr>
+
+    <footer>
+
+        <p>
+            <strong>Best Quality Store</strong>
+        </p>
+
+        <p>
+            &copy; 2023 Best Quality Store.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
