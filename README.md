@@ -13,7 +13,7 @@
 
 ## Project Overview
 
-**Best Quality Store** is an e-commerce website designed for a retail store that sells a variety of quality products, including **caps, clothing, shoes, laptops, and iPhones**.
+**Best Quality Store** is an e-commerce website designed for a retail store that sells a variety of quality products, including **shoes and iPhones**.
 
 The purpose of the website is to provide customers with an easy and convenient way to view the products offered by the store and obtain information about the available products and services.
 
@@ -33,12 +33,12 @@ The main goal of the Best Quality Store website is to create a professional, use
 2. Provide customers with information about the business.
 3. Display the different products sold by the store.
 4. Allow customers to view product categories such as:
+   - Caps
+   - Clothing
+   - Shoes
+   - Laptops
+   - iPhones
 
-   * Caps
-   * Clothing
-   * Shoes
-   * Laptops
-   * iPhones
 5. Provide product selection options where applicable.
 6. Allow customers to select shoe sizes.
 7. Allow customers to select different iPhone models and storage options.
@@ -68,8 +68,8 @@ The website will provide information about the products and services available a
 
 Product categories include:
 
-* Shoes
-* iPhones
+- Shoes
+- iPhones
 
 ### 4. Shoe Size Selection
 
@@ -77,16 +77,16 @@ Customers will be able to select the size of shoes they want before making an en
 
 Example sizes include:
 
-* Size 3
-* Size 4
-* Size 5
-* Size 6
-* Size 7
-* Size 8
-* Size 9
-* Size 10
-* Size 11
-* Size 12
+- Size 3
+- Size 4
+- Size 5
+- Size 6
+- Size 7
+- Size 8
+- Size 9
+- Size 10
+- Size 11
+- Size 12
 
 ### 5. iPhone Model and Storage Selection
 
@@ -94,10 +94,10 @@ Customers will be able to select an iPhone model and its available storage capac
 
 For example:
 
-* iPhone 13 — 128GB / 256GB
-* iPhone 14 — 128GB / 256GB
-* iPhone 15 — 128GB / 256GB / 512GB
-* iPhone 16 — 128GB / 256GB / 512GB
+- iPhone 13 — 128GB / 256GB
+- iPhone 14 — 128GB / 256GB
+- iPhone 15 — 128GB / 256GB / 512GB
+- iPhone 16 — 128GB / 256GB / 512GB
 
 The available options may be updated as the store's stock changes.
 
@@ -107,11 +107,11 @@ The Contact page will provide customers with information on how to communicate w
 
 This may include:
 
-* Telephone number
-* Email address
-* Physical address
-* Business hours
-* Social media information
+- Telephone number
+- Email address
+- Physical address
+- Business hours
+- Social media information
 
 ### 7. Store Location
 
@@ -125,12 +125,12 @@ The Enquiry page will allow customers to submit questions or requests regarding 
 
 Customers may provide information such as:
 
-* Name
-* Email address
-* Contact number
-* Product of interest
-* Product size or specification
-* Message/enquiry
+- Name
+- Email address
+- Contact number
+- Product of interest
+- Product size or specification
+- Message/enquiry
 
 ---
 
@@ -156,11 +156,11 @@ Part 1 focuses on establishing the basic structure and content of the Best Quali
 
 The website includes the following main pages:
 
-* `index.html` — Home page
-* `about.html` — About the business
-* `services.html` — Products and services
-* `contact.html` — Contact information and store location
-* `enquiry.html` — Customer enquiry form
+- `index.html` — Home page
+- `about.html` — About the business
+- `services.html` — Products and services
+- `contact.html` — Contact information and store location
+- `enquiry.html` — Customer enquiry form
 
 The first part focuses primarily on the structure, navigation, content and basic functionality of the website.
 
@@ -201,8 +201,8 @@ Best-Quality-Store/
           |                           +-----+------+
           |                           |            |
           |                        Shoes        iPhone
-          |                                      
-          |                                   
+          |
+          |
           |
      +----+-------+
      |            |
@@ -217,35 +217,35 @@ Best-Quality-Store/
 
 ### Version 1.0 — August 2026
 
-* Created the Best Quality Store project.
-* Created the basic website structure.
-* Added the home page.
-* Added the About page.
-* Added the Services page.
-* Added the Contact page.
-* Added the Enquiry page.
-* Added navigation between website pages.
-* Added information about the products sold by the store.
-* Added shoe size selection functionality.
-* Added iPhone model selection.
-* Added iPhone storage selection.
-* Added store location information.
-* Created the initial README.md documentation.
+- Created the Best Quality Store project.
+- Created the basic website structure.
+- Added the home page.
+- Added the About page.
+- Added the Services page.
+- Added the Contact page.
+- Added the Enquiry page.
+- Added navigation between website pages.
+- Added information about the products sold by the store.
+- Added shoe size selection functionality.
+- Added iPhone model selection.
+- Added iPhone storage selection.
+- Added store location information.
+- Created the initial README.md documentation.
 
 ### Future Updates
 
 Future versions of the website may include:
 
-* Improved website design.
-* Shopping cart functionality.
-* Product search.
-* Product filtering.
-* Product pricing.
-* Improved mobile responsiveness.
-* Online ordering.
-* Additional product categories.
-* Improved enquiry functionality.
-* Customer feedback functionality.
+- Improved website design.
+- Shopping cart functionality.
+- Product search.
+- Product filtering.
+- Product pricing.
+- Improved mobile responsiveness.
+- Online ordering.
+- Additional product categories.
+- Improved enquiry functionality.
+- Customer feedback functionality.
 
 ---
 
@@ -280,11 +280,11 @@ All external information, images, resources and sources used in the development 
 
 Examples of sources that may be referenced include:
 
-* Product information sources
-* Image sources
-* HTML documentation
-* Web development tutorials
-* Design resources
+- Product information sources
+- Image sources
+- HTML documentation
+- Web development tutorials
+- Design resources
 
 **Note:** All sources actually used in the final website should be added to this section with their complete reference information.
 
@@ -294,6 +294,6 @@ Examples of sources that may be referenced include:
 
 The Best Quality Store website is designed to provide customers with a simple and convenient way to learn about the business and its products.
 
-The website will showcase caps, clothing, shoes, laptops and iPhones while providing useful functionality such as shoe-size selection and iPhone model and storage selection.
+The website will showcase shoes and iPhones while providing useful functionality such as shoe-size selection and iPhone model and storage selection.
 
 The project will continue to be improved through Parts 2 and 3, with additional functionality, testing, documentation and design improvements being implemented before the final submission.

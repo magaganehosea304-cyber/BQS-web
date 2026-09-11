@@ -1,4 +1,3 @@
-
 /* =========================================
    BEST QUALITY STORE - MAIN CSS
    ========================================= */
@@ -25,7 +24,7 @@ body {
 /* ---------- HEADER ---------- */
 
 header {
-    background: linear-gradient(135deg, #071a3d, #0d47a1);
+    background: linear-gradient(135deg, #0f0f0f, #0f5fd6);
     color: white;
     text-align: center;
     padding: 30px 20px;
@@ -57,11 +56,14 @@ header p {
 nav {
     background-color: #ffffff;
     text-align: center;
-    padding: 15px 10px;
+    padding: 15px 20px;
     position: sticky;
     top: 0;
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
     z-index: 1000;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e1e7f0;
 }
 
 nav p {
@@ -77,12 +79,8 @@ nav a {
     padding: 10px 18px;
     margin: 3px;
     border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-/* Remove the | separators visually */
-nav a {
     border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -108,6 +106,7 @@ main {
 
 section {
     background-color: white;
+    text-align: center;
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
@@ -122,7 +121,7 @@ section h2 {
     color: #0d47a1;
     font-size: 28px;
     margin-bottom: 15px;
-    border-left: 5px solid #0d47a1;
+    border-left: 5px solid #fdffff;
     padding-left: 12px;
 }
 
@@ -145,6 +144,92 @@ hr {
     margin: 25px 0;
 }
 
+/* =================================================
+   PRODUCT CONTAINER - HORIZONTAL LAYOUT
+   ================================================= */
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 30px auto;
+}
+
+/* ---------- INDIVIDUAL PRODUCT ---------- */
+
+.product {
+    width: 220px;
+    min-height: 330px;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #e1e7f0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+/* ---------- PRODUCT HOVER ---------- */
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+    border-color: #0d47a1;
+}
+
+/* ---------- PRODUCT IMAGE ---------- */
+
+.product img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Make product image slightly bigger when hovering */
+
+.product:hover img {
+    transform: scale(1.08);
+}
+
+/* ---------- PRODUCT NAME ---------- */
+
+.product h3 {
+    color: #071a3d;
+    font-size: 20px;
+    margin: 10px 0 15px;
+}
+
+/* ---------- PRODUCT BUTTON ---------- */
+
+.product button {
+    width: auto;
+    min-width: 130px;
+    margin-top: 10px;
+}
+
+/* ---------- PRODUCT GRID ALTERNATIVE ---------- */
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
 /* ---------- IMAGES ---------- */
 
 main img {
@@ -163,6 +248,17 @@ main img[onclick]:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ---------- PRODUCT IMAGES ---------- */
+
+main img[alt="Shoes"],
+main img[alt="iPhone"] {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    margin: 0 auto 15px;
+}
+
 /* ---------- LISTS ---------- */
 
 ul,
@@ -176,6 +272,12 @@ li {
 
 ul li::marker {
     color: #0d47a1;
+}
+
+/* ---------- PRODUCT LIST ---------- */
+
+section ul {
+    list-style-type: square;
 }
 
 /* ---------- BUTTONS ---------- */
@@ -323,25 +425,27 @@ main > section:first-child h2 {
     padding-left: 0;
 }
 
-/* ---------- PRODUCT IMAGES ---------- */
+/* =================================================
+   RESPONSIVE DESIGN
+   ================================================= */
 
-main img[alt="Shoes"],
-main img[alt="iPhone"] {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 4px solid #f0f3f8;
+/* ---------- TABLETS ---------- */
+
+@media screen and (max-width: 991.98px) {
+
+    .products,
+    .product-container {
+        gap: 20px;
+    }
+
+    .product {
+        width: 200px;
+    }
 }
 
-/* ---------- PRODUCT LIST ---------- */
+/* ---------- MOBILE ---------- */
 
-section ul {
-    list-style-type: square;
-}
-
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 575.98px) {
 
     header {
         padding: 25px 15px;
@@ -352,13 +456,15 @@ section ul {
     }
 
     nav {
-        position: relative;
+        display: center;
+        gap: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
     }
 
     nav a {
-        display: block;
-        width: 90%;
-        margin: 5px auto;
+        text-decoration: none;
     }
 
     main {
@@ -377,11 +483,24 @@ section ul {
     iframe {
         height: 300px;
     }
+
+/* ---------- Products become vertical on small screens ---------- */
+
+    .products,
+    .product-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .product {
+        width: 70%;
+        max-width: 160px;
+    }
 }
 
 /* ---------- SMALL MOBILE DEVICES ---------- */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 575.98px) {
 
     header h1 {
         font-size: 25px;
@@ -412,5 +531,9 @@ section ul {
 
     iframe {
         height: 250px;
+    }
+
+    .product {
+        width: 100%;
     }
 }
