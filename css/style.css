@@ -456,15 +456,29 @@ main > section:first-child h2 {
     }
 
     nav {
-        display: center;
-        gap: 20px;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e1e7f0;
     }
 
     nav a {
-        text-decoration: none;
+    display: inline-block;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 18px;
+    margin: 3px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
     }
 
     main {
