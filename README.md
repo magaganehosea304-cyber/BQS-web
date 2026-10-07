@@ -161,7 +161,18 @@ The website includes the following main pages:
 
 The first part focuses primarily on the structure, navigation, content and basic functionality of the website.
 
-Parts 2 and 3 will introduce additional improvements and functionality in future submissions or edits.
+# Part 2 – CSS and Website Design
+
+## CSS Styling
+
+Part 2 introduced CSS styling to improve the appearance and usability of the Best Quality Store website.
+
+The website uses an external CSS stylesheet:
+
+```text
+css/style.css
+
+Parts 3 will introduce additional improvements and functionality in future submissions or edits.
 
 ---
 
