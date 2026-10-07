@@ -192,7 +192,12 @@ Best-Quality-Store/
 │   └── product-images
 │
 └── css/
-    └── style.css
+│   └── style.css
+│
+└── js/
+    └── script.js
+
+
 ```
 
 ---
