@@ -33,10 +33,7 @@ The main goal of the Best Quality Store website is to create a professional, use
 2. Provide customers with information about the business.
 3. Display the different products sold by the store.
 4. Allow customers to view product categories such as:
-   - Caps
-   - Clothing
    - Shoes
-   - Laptops
    - iPhones
 
 5. Provide product selection options where applicable.
@@ -143,8 +140,8 @@ Customers may provide information such as:
 | Part 1 | Create navigation between pages          | Completed/In Progress |
 | Part 1 | Add business and product information     | Completed/In Progress |
 | Part 1 | Create README.md                         | Completed/In Progress |
-| Part 2 | Improve website design and functionality | Upcoming              |
-| Part 2 | Add additional product functionality     | Upcoming              |
+| Part 2 | Improve website design and functionality | Completed/In Progress |              
+| Part 2 | Add additional product functionality     | Completed/In Progress |
 | Part 3 | Final improvements and testing           | Upcoming              |
 | Part 3 | Final documentation and submission       | Upcoming              |
 
@@ -164,7 +161,18 @@ The website includes the following main pages:
 
 The first part focuses primarily on the structure, navigation, content and basic functionality of the website.
 
-Parts 2 and 3 will introduce additional improvements and functionality in future submissions or edits.
+# Part 2 – CSS and Website Design
+
+## CSS Styling
+
+Part 2 introduced CSS styling to improve the appearance and usability of the Best Quality Store website.
+
+The website uses an external CSS stylesheet:
+
+```text
+css/style.css
+
+Parts 3 will introduce additional improvements and functionality in future submissions or edits.
 
 ---
 
@@ -184,7 +192,12 @@ Best-Quality-Store/
 │   └── product-images
 │
 └── css/
-    └── style.css
+│   └── style.css
+│
+└── js/
+    └── script.js
+
+
 ```
 
 ---
