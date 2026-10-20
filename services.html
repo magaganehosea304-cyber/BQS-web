@@ -27,7 +27,7 @@
         <h1>Our Products & Services</h1>
 
         <p>
-            <em>View our products and place your order.</em>
+            <em>View our products, choose your size/storage (with distinct pricing), and place your order.</em>
         </p>
 
     <!-- ========================================= -->
@@ -82,220 +82,250 @@
             <div class="products">
 
                 <!-- Product 1 -->
-                <div class="product">
-
-                    <img src="images/adidas campus.avif"
-                         alt="Shoes">
-
-                    <h3>Adidus Campus</h3>
-
+                <div class="product" data-id="1">
+                    <img src="images/adidas campus.avif" alt="Shoes">
+                    <h3>Adidas Campus</h3>
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(1, 'Adidas Campous', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(1, 'Adidas Campus', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 2 -->
-                <div class="product">
-
-                    <img src="images/adidas niteball.webp"
-                         alt="Keyboard">
-
+                <div class="product" data-id="2">
+                    <img src="images/adidas niteball.webp" alt="Adidas Niteball">
                     <h3>Adidas Niteball</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(2, 'Adidas Niteball', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(2, 'Adidas Niteball', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 3 -->
-                <div class="product">
-
-                    <img src="images/Adidas samba.jpg"
-                         alt="Adidas samba">
-
+                <div class="product" data-id="3">
+                    <img src="images/Adidas samba.jpg" alt="Adidas samba">
                     <h3>Adidas Samba</h3>
-
                     <p class="price">R1 199</p>
-
-                    <button onclick="addToCart(3, 'Adidas samba', 1199)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(3, 'Adidas Samba', 1199, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 4 -->
-                <div class="product">
-
-                    <img src="images/Jordan 4.webp"
-                         alt="Nike Jordan 4">
-
+                <div class="product" data-id="4">
+                    <img src="images/Jordan 4.webp" alt="Nike Jordan 4">
                     <h3>Nike Jordan 4</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(4, 'Nike Jordan 4', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(4, 'Nike Jordan 4', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 5 -->
-                <div class="product">
-
-                    <img src="images/karl.webp"
-                         alt="Karl">
-
+                <div class="product" data-id="5">
+                    <img src="images/karl.webp" alt="Karl">
                     <h3>Karl</h3>
-
                     <p class="price">R1 999</p>
-
-                    <button onclick="addToCart(5, 'Karl', 1999)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(5, 'Karl', 1999, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 6 -->
-                <div class="product">
-
-                    <img src="images/nike air jordan 1.webp"
-                         alt="Nike Air Jordan 1">
-
+                <div class="product" data-id="6">
+                    <img src="images/nike air jordan 1.webp" alt="Nike Air Jordan 1">
                     <h3>Nike Air Jordan 1</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(6, 'Nike Air Jordan 1', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(6, 'Nike Air Jordan 1', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 7 -->
-                <div class="product">
-
-                    <img src="images/Nike airforce 1.webp"
-                         alt="Nike Airforce 1">
-
+                <div class="product" data-id="7">
+                    <img src="images/Nike airforce 1.webp" alt="Nike Airforce 1">
                     <h3>Nike Airforce 1</h3>
-
                     <p class="price">R1 099</p>
-
-                    <button onclick="addToCart(7, 'Nike Airforce 1', 1099)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(7, 'Nike Airforce 1', 1099, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 8 -->
-                <div class="product">
-
-                    <img src="images/nike airmore untempo.webp"
-                         alt="Nike Airmore Untempo">
-
+                <div class="product" data-id="8">
+                    <img src="images/nike airmore untempo.webp" alt="Nike Airmore Untempo">
                     <h3>Nike Airmore Untempo</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(8, 'Nike Airmore Untempo', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(8, 'Nike Airmore Untempo', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
-
 
                 <!-- Product 9 -->
-                <div class="product">
-
-                    <img src="images/nike dunk.jpg"
-                         alt="Nike Dunk">
-
+                <div class="product" data-id="9">
+                    <img src="images/nike dunk.jpg" alt="Nike Dunk">
                     <h3>Nike Dunk</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(9, 'Nike Dunk', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(9, 'Nike Dunk', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
                 <!-- Product 10 -->
-                <div class="product">
-
-                    <img src="images/Nike portal.webp"
-                         alt="Nike Portal">
-
+                <div class="product" data-id="10">
+                    <img src="images/Nike portal.webp" alt="Nike Portal">
                     <h3>Nike Portal</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(10, 'Nike Portal', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(10, 'Nike Portal', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
 
                 <!-- Product 11 -->
-                <div class="product">
-
-                    <img src="images/Nike shox.webp"
-                         alt="Nike Shox">
-
+                <div class="product" data-id="11">
+                    <img src="images/Nike shox.webp" alt="Nike Shox">
                     <h3>Nike Shox</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(11, 'Nike Shox', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(11, 'Nike Shox', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
 
                 <!-- Product 12 -->
-                <div class="product">
-
-                    <img src="images/Nike tn.webp"
-                         alt="Nike Tn">
-
+                <div class="product" data-id="12">
+                    <img src="images/Nike tn.webp" alt="Nike Tn">
                     <h3>Nike Tn</h3>
-
                     <p class="price">R1 499</p>
-
-                    <button onclick="addToCart(12, 'Nike Tn', 1499)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(12, 'Nike Tn', 1499, this)">
                         Add to Cart
                     </button>
-
                 </div>
 
                 <!-- Product 13 -->
-                <div class="product">
-
-                    <img src="images/Timberland.jpg"
-                         alt="Timberland">
-
+                <div class="product" data-id="13">
+                    <img src="images/Timberland.jpg" alt="Timberland">
                     <h3>Timberland</h3>
-
                     <p class="price">R2 299</p>
-
-                    <button onclick="addToCart(13, 'Timberland', 2299)">
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(13, 'Timberland', 2299, this)">
                         Add to Cart
                     </button>
-
                 </div>
 
             </div>
@@ -304,7 +334,7 @@
 
 
         <!-- ========================================= -->
-        <!-- IPHONE PRODUCTS -->
+        <!-- IPHONE PRODUCTS (WITH DYNAMIC STORAGE PRICES) -->
         <!-- ========================================= -->
 
         <section>
@@ -313,139 +343,140 @@
 
             <div class="products" id="product-list">
 
-                <!-- iPhone 1 -->
-                <div class="product">
-
-                    <img src="images/Iphone 11.jpg"
-                         alt="iPhone 11">
-
+                <!-- iPhone 11 -->
+                <div class="product" data-id="21">
+                    <img src="images/Iphone 11.jpg" alt="iPhone 11">
                     <h3>iPhone 11</h3>
-
                     <p class="price">R6 500</p>
-
-                    <button onclick="addToCart(11, 'iPhone 11', 6500)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="64GB" data-price="5800">64GB (R5 800)</option>
+                            <option value="128GB" data-price="6500" selected>128GB (R6 500)</option>
+                            <option value="256GB" data-price="7800">256GB (R7 800)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(21, 'iPhone 11', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 2 -->
-                <div class="product">
-
-                    <img src="images/Iphone 12.webp"
-                         alt="iPhone 12">
-
+                <!-- iPhone 12 -->
+                <div class="product" data-id="22">
+                    <img src="images/Iphone 12.webp" alt="iPhone 12">
                     <h3>iPhone 12</h3>
-
                     <p class="price">R7 000</p>
-
-                    <button onclick="addToCart(12, 'iPhonw 12', 7000)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="64GB" data-price="6200">64GB (R6 200)</option>
+                            <option value="128GB" data-price="7000" selected>128GB (R7 000)</option>
+                            <option value="256GB" data-price="8500">256GB (R8 500)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(22, 'iPhone 12', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 3 -->
-                <div class="product">
-
-                    <img src="images/Iphone 13.webp"
-                         alt="iPhone 13">
-
+                <!-- iPhone 13 -->
+                <div class="product" data-id="23">
+                    <img src="images/Iphone 13.webp" alt="iPhone 13">
                     <h3>iPhone 13</h3>
-
                     <p class="price">R8 800</p>
-
-                    <button onclick="addToCart(13, 'iPhone 13', 8800)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="128GB" data-price="8800" selected>128GB (R8 800)</option>
+                            <option value="256GB" data-price="10200">256GB (R10 200)</option>
+                            <option value="512GB" data-price="12500">512GB (R12 500)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(23, 'iPhone 13', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 4 -->
-                <div class="product">
-
-                    <img src="images/Iphone 14.jpg"
-                         alt="iPhone 14">
-
+                <!-- iPhone 14 -->
+                <div class="product" data-id="24">
+                    <img src="images/Iphone 14.jpg" alt="iPhone 14">
                     <h3>iPhone 14</h3>
-
                     <p class="price">R10 500</p>
-
-                    <button onclick="addToCart(14, 'iPhone 14', 10500)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="128GB" data-price="10500" selected>128GB (R10 500)</option>
+                            <option value="256GB" data-price="12000">256GB (R12 000)</option>
+                            <option value="512GB" data-price="14500">512GB (R14 500)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(24, 'iPhone 14', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 5 -->
-                <div class="product">
-
-                    <img src="images/Iphone 15.jpg"
-                         alt="iPhone 15">
-
+                <!-- iPhone 15 -->
+                <div class="product" data-id="25">
+                    <img src="images/Iphone 15.jpg" alt="iPhone 15">
                     <h3>iPhone 15</h3>
-
                     <p class="price">R12 700</p>
-
-                    <button onclick="addToCart(15, 'iPhone 15', 12700)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="128GB" data-price="12700" selected>128GB (R12 700)</option>
+                            <option value="256GB" data-price="14500">256GB (R14 500)</option>
+                            <option value="512GB" data-price="17200">512GB (R17 200)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(25, 'iPhone 15', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 6 -->
-                <div class="product">
-
-                    <img src="images/Iphone 16.jpg"
-                         alt="iPhone 16">
-
+                <!-- iPhone 16 -->
+                <div class="product" data-id="26">
+                    <img src="images/Iphone 16.jpg" alt="iPhone 16">
                     <h3>iPhone 16</h3>
-
                     <p class="price">R15 500</p>
-
-                    <button onclick="addToCart(16, 'iPhone 16', 15500)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="128GB" data-price="15500" selected>128GB (R15 500)</option>
+                            <option value="256GB" data-price="17800">256GB (R17 800)</option>
+                            <option value="512GB" data-price="20900">512GB (R20 900)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(26, 'iPhone 16', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 7 -->
-                <div class="product">
-
-                    <img src="images/Iphone 17.jpg"
-                         alt="iPhone 17">
-
+                <!-- iPhone 17 -->
+                <div class="product" data-id="27">
+                    <img src="images/Iphone 17.jpg" alt="iPhone 17">
                     <h3>iPhone 17</h3>
-
                     <p class="price">R19 000</p>
-
-                    <button onclick="addToCart(17, 'iPhone 17', 19000)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="256GB" data-price="19000" selected>256GB (R19 000)</option>
+                            <option value="512GB" data-price="22500">512GB (R22 500)</option>
+                            <option value="1TB" data-price="26900">1TB (R26 900)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(27, 'iPhone 17', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
-
-                <!-- iPhone 8 -->
-                <div class="product">
-
-                    <img src="images/Iphone Air.jpg"
-                         alt="iPhone Air">
-
+                <!-- iPhone Air -->
+                <div class="product" data-id="28">
+                    <img src="images/Iphone Air.jpg" alt="iPhone Air">
                     <h3>iPhone Air</h3>
-
                     <p class="price">R19 500</p>
-
-                    <button onclick="addToCart(18, 'iPhone Air', 19500)">
+                    <label>Storage: 
+                        <select class="product-option" onchange="updateStoragePrice(this)">
+                            <option value="256GB" data-price="19500" selected>256GB (R19 500)</option>
+                            <option value="512GB" data-price="23000">512GB (R23 000)</option>
+                            <option value="1TB" data-price="27500">1TB (R27 500)</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedStorageToCart(28, 'iPhone Air', this)">
                         Add to Cart
                     </button>
-
                 </div>
 
             </div>
@@ -472,18 +503,22 @@
 
             </div>
 
+            <!-- Cart items list container -->
+            <div id="cart-items" style="margin: 15px 0;"></div>
+
             <h3>
                 Total: R
                 <span id="cart-total">0</span>
             </h3>
 
 
-            <div class="send_order">
-
+            <div class="send_order" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                <button onclick="clearCart()">
+                    Clear Cart
+                </button>
                 <button onclick="window.location.href='enquiry.html'">
                     Send Order
                 </button>
-
             </div>
 
         </section>

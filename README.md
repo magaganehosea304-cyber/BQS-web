@@ -140,7 +140,7 @@ Customers may provide information such as:
 | Part 1 | Create navigation between pages          | Completed/In Progress |
 | Part 1 | Add business and product information     | Completed/In Progress |
 | Part 1 | Create README.md                         | Completed/In Progress |
-| Part 2 | Improve website design and functionality | Completed/In Progress |              
+| Part 2 | Improve website design and functionality | Completed/In Progress |
 | Part 2 | Add additional product functionality     | Completed/In Progress |
 | Part 3 | Final improvements and testing           | Upcoming              |
 | Part 3 | Final documentation and submission       | Upcoming              |
@@ -169,7 +169,7 @@ Part 2 introduced CSS styling to improve the appearance and usability of the Bes
 
 The website uses an external CSS stylesheet:
 
-```text
+````text
 css/style.css
 
 Parts 3 will introduce additional improvements and functionality in future submissions or edits.
@@ -198,7 +198,7 @@ Best-Quality-Store/
     └── script.js
 
 
-```
+````
 
 ---
 
