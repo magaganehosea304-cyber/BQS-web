@@ -27,7 +27,7 @@
         <h1>Our Products & Services</h1>
 
         <p>
-            <em>View our products, choose your size/storage (with distinct pricing), and place your order.</em>
+            <em>View our products, choose your iPhone model (Standard, Pro, Pro Max) with visual preview badges, and place your order.</em>
         </p>
 
     <!-- ========================================= -->
@@ -332,153 +332,270 @@
                     </button>
                 </div>
 
+                <!-- Product 14 -->
+                <div class="product" data-id="14">
+                    <img src="images/puma-suede-xl-trainers.webp" alt="puma-suede-xl">
+                    <h3>Puma Suede Xl</h3>
+                    <p class="price">R1 699</p>
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(13, 'puma-suede-xl', 1699, this)">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="product" data-id="15">
+                    <img src="images/Lacoste.webp" alt="Lacoste Courtage Set Leather">
+                    <h3>Lacoste Courtage Set Leather</h3>
+                    <p class="price">R2 350</p>
+                    <label>Size: 
+                        <select class="product-option">
+                            <option value="UK 6">UK 6</option>
+                            <option value="UK 7" selected>UK 7</option>
+                            <option value="UK 8">UK 8</option>
+                            <option value="UK 9">UK 9</option>
+                            <option value="UK 10">UK 10</option>
+                        </select>
+                    </label>
+                    <button onclick="addSelectedToCart(13, 'puma-suede-xl', 2350, this)">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
 
         </section>
 
 
         <!-- ========================================= -->
-        <!-- IPHONE PRODUCTS (WITH DYNAMIC STORAGE PRICES) -->
+        <!-- IPHONES (STANDARD, PRO, PRO MAX - 11 to 17) -->
         <!-- ========================================= -->
 
         <section>
 
-            <h2>iPhones</h2>
+            <h2>iPhones (Standard, Pro, Pro Max)</h2>
 
             <div class="products" id="product-list">
 
                 <!-- iPhone 11 -->
-                <div class="product" data-id="21">
-                    <img src="images/Iphone 11.jpg" alt="iPhone 11">
+                <div class="product" data-id="21" data-base="6500">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 11.jpg" alt="iPhone 11">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 11</h3>
                     <p class="price">R6 500</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="64GB" data-price="5800">64GB (R5 800)</option>
-                            <option value="128GB" data-price="6500" selected>128GB (R6 500)</option>
-                            <option value="256GB" data-price="7800">256GB (R7 800)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="2200">Pro (+R2 200)</option>
+                            <option value="Pro Max" data-add="4000">Pro Max (+R4 000)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(21, 'iPhone 11', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="64GB" data-add="-700">64GB</option>
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="1300">256GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(21, 'iPhone 11', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 12 -->
-                <div class="product" data-id="22">
-                    <img src="images/Iphone 12.webp" alt="iPhone 12">
+                <div class="product" data-id="22" data-base="7000">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 12.webp" alt="iPhone 12">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 12</h3>
                     <p class="price">R7 000</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="64GB" data-price="6200">64GB (R6 200)</option>
-                            <option value="128GB" data-price="7000" selected>128GB (R7 000)</option>
-                            <option value="256GB" data-price="8500">256GB (R8 500)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="2500">Pro (+R2 500)</option>
+                            <option value="Pro Max" data-add="4500">Pro Max (+R4 500)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(22, 'iPhone 12', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="64GB" data-add="-800">64GB</option>
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="1500">256GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(22, 'iPhone 12', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 13 -->
-                <div class="product" data-id="23">
-                    <img src="images/Iphone 13.webp" alt="iPhone 13">
+                <div class="product" data-id="23" data-base="8800">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 13.webp" alt="iPhone 13">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 13</h3>
                     <p class="price">R8 800</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="128GB" data-price="8800" selected>128GB (R8 800)</option>
-                            <option value="256GB" data-price="10200">256GB (R10 200)</option>
-                            <option value="512GB" data-price="12500">512GB (R12 500)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="3000">Pro (+R3 000)</option>
+                            <option value="Pro Max" data-add="5200">Pro Max (+R5 200)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(23, 'iPhone 13', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="1500">256GB</option>
+                            <option value="512GB" data-add="3800">512GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(23, 'iPhone 13', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 14 -->
-                <div class="product" data-id="24">
-                    <img src="images/Iphone 14.jpg" alt="iPhone 14">
+                <div class="product" data-id="24" data-base="10500">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 14.jpg" alt="iPhone 14">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 14</h3>
                     <p class="price">R10 500</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="128GB" data-price="10500" selected>128GB (R10 500)</option>
-                            <option value="256GB" data-price="12000">256GB (R12 000)</option>
-                            <option value="512GB" data-price="14500">512GB (R14 500)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="3500">Pro (+R3 500)</option>
+                            <option value="Pro Max" data-add="6000">Pro Max (+R6 000)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(24, 'iPhone 14', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="1800">256GB</option>
+                            <option value="512GB" data-add="4200">512GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(24, 'iPhone 14', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 15 -->
-                <div class="product" data-id="25">
-                    <img src="images/Iphone 15.jpg" alt="iPhone 15">
+                <div class="product" data-id="25" data-base="12700">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 15.jpg" alt="iPhone 15">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 15</h3>
                     <p class="price">R12 700</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="128GB" data-price="12700" selected>128GB (R12 700)</option>
-                            <option value="256GB" data-price="14500">256GB (R14 500)</option>
-                            <option value="512GB" data-price="17200">512GB (R17 200)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="4000">Pro (+R4 000)</option>
+                            <option value="Pro Max" data-add="6800">Pro Max (+R6 800)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(25, 'iPhone 15', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="2000">256GB</option>
+                            <option value="512GB" data-add="4800">512GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(25, 'iPhone 15', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 16 -->
-                <div class="product" data-id="26">
-                    <img src="images/Iphone 16.jpg" alt="iPhone 16">
+                <div class="product" data-id="26" data-base="15500">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 16.jpg" alt="iPhone 16">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 16</h3>
                     <p class="price">R15 500</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="128GB" data-price="15500" selected>128GB (R15 500)</option>
-                            <option value="256GB" data-price="17800">256GB (R17 800)</option>
-                            <option value="512GB" data-price="20900">512GB (R20 900)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="4500">Pro (+R4 500)</option>
+                            <option value="Pro Max" data-add="7500">Pro Max (+R7 500)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(26, 'iPhone 16', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="128GB" data-add="0" selected>128GB</option>
+                            <option value="256GB" data-add="2300">256GB</option>
+                            <option value="512GB" data-add="5400">512GB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(26, 'iPhone 16', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone 17 -->
-                <div class="product" data-id="27">
-                    <img src="images/Iphone 17.jpg" alt="iPhone 17">
+                <div class="product" data-id="27" data-base="19000">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone 17.jpg" alt="iPhone 17">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone 17</h3>
                     <p class="price">R19 000</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="256GB" data-price="19000" selected>256GB (R19 000)</option>
-                            <option value="512GB" data-price="22500">512GB (R22 500)</option>
-                            <option value="1TB" data-price="26900">1TB (R26 900)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="5000">Pro (+R5 000)</option>
+                            <option value="Pro Max" data-add="8500">Pro Max (+R8 500)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(27, 'iPhone 17', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="256GB" data-add="0" selected>256GB</option>
+                            <option value="512GB" data-add="3500">512GB</option>
+                            <option value="1TB" data-add="7900">1TB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(27, 'iPhone 17', this)">
                         Add to Cart
                     </button>
                 </div>
 
                 <!-- iPhone Air -->
-                <div class="product" data-id="28">
-                    <img src="images/Iphone Air.jpg" alt="iPhone Air">
+                <div class="product" data-id="28" data-base="19500">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="images/Iphone Air.jpg" alt="iPhone Air">
+                        <span class="model-badge" style="position: absolute; top: 8px; right: 8px; background: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Standard</span>
+                    </div>
                     <h3>iPhone Air</h3>
                     <p class="price">R19 500</p>
-                    <label>Storage: 
-                        <select class="product-option" onchange="updateStoragePrice(this)">
-                            <option value="256GB" data-price="19500" selected>256GB (R19 500)</option>
-                            <option value="512GB" data-price="23000">512GB (R23 000)</option>
-                            <option value="1TB" data-price="27500">1TB (R27 500)</option>
+                    <label>Model: 
+                        <select class="iphone-model product-option" onchange="updateIPhonePrice(this)">
+                            <option value="Standard" data-add="0" selected>Standard</option>
+                            <option value="Pro" data-add="5200">Pro (+R5 200)</option>
+                            <option value="Pro Max" data-add="8800">Pro Max (+R8 800)</option>
                         </select>
                     </label>
-                    <button onclick="addSelectedStorageToCart(28, 'iPhone Air', this)">
+                    <label>Storage: 
+                        <select class="iphone-storage product-option" onchange="updateIPhonePrice(this)">
+                            <option value="256GB" data-add="0" selected>256GB</option>
+                            <option value="512GB" data-add="3500">512GB</option>
+                            <option value="1TB" data-add="8000">1TB</option>
+                        </select>
+                    </label>
+                    <button onclick="addIPhoneToCart(28, 'iPhone Air', this)">
                         Add to Cart
                     </button>
                 </div>

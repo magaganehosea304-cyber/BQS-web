@@ -1,4 +1,4 @@
-// BQS Web - Main JavaScript (Cart, Storage with Dynamic Pricing, Size selection, Clear Cart, Validation, Search)
+// BQS Web - Main JavaScript (Cart, iPhone Model & Storage dynamic pricing, Size selection, Clear Cart, Validation, Search)
 
 const CART_KEY = 'bqs_cart';
 
@@ -16,17 +16,27 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-// Update displayed price when storage option changes
-function updateStoragePrice(selectEl) {
-  const productCard = selectEl.closest('.product');
-  if (!productCard) return;
-  const selectedOption = selectEl.options[selectEl.selectedIndex];
-  const price = selectedOption.dataset.price;
-  const priceEl = productCard.querySelector('.price');
-  if (priceEl && price) {
-    const num = Number(price);
-    priceEl.textContent = 'R ' + num.toLocaleString('en-ZA');
+// Update displayed price dynamically when iPhone model or storage changes
+function updateIPhonePrice(el) {
+  const card = el.closest('.product');
+  if (!card) return;
+  const base = Number(card.dataset.base) || 0;
+  const modelSelect = card.querySelector('.iphone-model');
+  const storageSelect = card.querySelector('.iphone-storage');
+
+  const modelAdd = modelSelect ? Number(modelSelect.options[modelSelect.selectedIndex].dataset.add) : 0;
+  const storageAdd = storageSelect ? Number(storageSelect.options[storageSelect.selectedIndex].dataset.add) : 0;
+
+  const total = base + modelAdd + storageAdd;
+  const priceEl = card.querySelector('.price');
+  if (priceEl) {
+    priceEl.textContent = 'R ' + total.toLocaleString('en-ZA');
   }
+}
+
+// Legacy storage price updater fallback
+function updateStoragePrice(selectEl) {
+  updateIPhonePrice(selectEl);
 }
 
 // Add shoe with selected size to cart
@@ -59,18 +69,20 @@ function addSelectedToCart(id, baseName, price, buttonEl) {
   showToast(`${fullName} added to cart!`);
 }
 
-// Add iPhone with selected storage and its dynamic price to cart
-function addSelectedStorageToCart(id, baseName, buttonEl) {
-  const productCard = buttonEl.closest('.product');
-  const optionSelect = productCard ? productCard.querySelector('.product-option') : null;
-  if (!optionSelect) return;
+// Add iPhone with selected Model (Standard, Pro, Pro Max) and Storage to cart
+function addIPhoneToCart(id, baseName, btnEl) {
+  const card = btnEl.closest('.product');
+  if (!card) return;
+  const modelSel = card.querySelector('.iphone-model');
+  const storageSel = card.querySelector('.iphone-storage');
+  
+  const model = modelSel ? modelSel.value : 'Standard';
+  const storage = storageSel ? storageSel.value : '128GB';
+  const priceText = card.querySelector('.price').textContent.replace(/[^\d]/g, '');
+  const price = Number(priceText) || 0;
 
-  const selectedOption = optionSelect.options[optionSelect.selectedIndex];
-  const variant = selectedOption.value; // e.g., '64GB', '128GB', '256GB', '512GB', '1TB'
-  const price = Number(selectedOption.dataset.price);
-
-  const fullName = `${baseName} (${variant})`;
-  const uniqueKey = `${id}-${variant}`;
+  const fullName = `${baseName} ${model} (${storage})`;
+  const uniqueKey = `${id}-${model}-${storage}`;
 
   const cart = getCart();
   const existing = cart.find(i => i.uniqueKey === uniqueKey);
@@ -84,13 +96,18 @@ function addSelectedStorageToCart(id, baseName, buttonEl) {
       name: fullName,
       price: price,
       qty: 1,
-      variant
+      variant: `${model} ${storage}`
     });
   }
 
   saveCart(cart);
   updateCartUI();
   showToast(`${fullName} added to cart! (R ${price.toLocaleString('en-ZA')})`);
+}
+
+// Legacy storage cart adder
+function addSelectedStorageToCart(id, baseName, btnEl) {
+  addIPhoneToCart(id, baseName, btnEl);
 }
 
 // Legacy fallback helper if called directly
@@ -155,9 +172,10 @@ function updateCartUI() {
         row.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding: 6px; background: #f9f9f9; border-radius: 4px;';
         row.innerHTML = `
           <span style="flex: 2; font-weight: 500;">${item.name}</span>
-          <span style="flex: 1; text-align: left;">R ${(item.price * item.qty).toLocaleString('en-ZA')}</span>
+          <span style="flex: 1; text-align: center;">R ${(item.price * item.qty).toLocaleString('en-ZA')}</span>
           <input type="number" min="1" max="25" value="${item.qty}" data-key="${item.uniqueKey}" class="qty-input" style="width: 70px; text-align: center; margin: 0 8px;">
-          <button class="remove-btn" data-key="${item.uniqueKey}">Remove</button>`;
+          <button class="remove-btn" data-key="${item.uniqueKey}">Remove</button>
+        `;
         list.appendChild(row);
       });
 
@@ -244,7 +262,9 @@ document.addEventListener('DOMContentLoaded', function () {
   setupSearch();
   markActiveNav();
 
+  window.updateIPhonePrice = updateIPhonePrice;
   window.updateStoragePrice = updateStoragePrice;
+  window.addIPhoneToCart = addIPhoneToCart;
   window.addSelectedStorageToCart = addSelectedStorageToCart;
   window.addSelectedToCart = addSelectedToCart;
   window.addToCart = addToCart;
@@ -253,7 +273,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Expose globally for inline event handlers
+window.updateIPhonePrice = updateIPhonePrice;
 window.updateStoragePrice = updateStoragePrice;
+window.addIPhoneToCart = addIPhoneToCart;
 window.addSelectedStorageToCart = addSelectedStorageToCart;
 window.addSelectedToCart = addSelectedToCart;
 window.addToCart = addToCart;
