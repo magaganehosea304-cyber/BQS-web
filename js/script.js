@@ -155,7 +155,7 @@ function updateCartUI() {
         row.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding: 6px; background: #f9f9f9; border-radius: 4px;';
         row.innerHTML = `
           <span style="flex: 2; font-weight: 500;">${item.name}</span>
-          <span style="flex: 1; text-align: center;">R ${(item.price * item.qty).toLocaleString('en-ZA')}</span>
+          <span style="flex: 1; text-align: left;">R ${(item.price * item.qty).toLocaleString('en-ZA')}</span>
           <input type="number" min="1" max="25" value="${item.qty}" data-key="${item.uniqueKey}" class="qty-input" style="width: 70px; text-align: center; margin: 0 8px;">
           <button class="remove-btn" data-key="${item.uniqueKey}">Remove</button>`;
         list.appendChild(row);
