@@ -725,12 +725,14 @@ main > section:first-child h2 {
 }
 
 /* =================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (TABLETS & SMARTPHONES)
    ================================================= */
 
-/* ---------- TABLETS ---------- */
-
+/* ---------- TABLETS (iPad, Medium Screens <= 991px) ---------- */
 @media screen and (max-width: 991.98px) {
+    main {
+        width: 92%;
+    }
 
     .products,
     .product-container {
@@ -738,115 +740,181 @@ main > section:first-child h2 {
     }
 
     .product {
-        width: 200px;
+        width: 210px;
     }
 }
 
-/* ---------- MOBILE ---------- */
-
+/* ---------- SMARTPHONES (iPhones & Android Phones <= 576px) ---------- */
 @media screen and (max-width: 575.98px) {
 
     header {
-        padding: 25px 15px;
-    }
-
-    header h1 {
-        font-size: 30px;
-    }
-
-    nav {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    border-radius: 60px;
-    backdrop-filter: blur(15px);
-    z-index: 1000;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    border: 1px solid #e1e7f0;
-    }
-
-    nav a {
-    display: inline-block;
-    color: #0d47a1;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px 18px;
-    margin: 3px;
-    border-radius: 25px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    }
-
-    main {
-        width: 94%;
-        margin: 25px auto;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    section h2 {
-        font-size: 24px;
-    }
-
-    iframe {
-        height: 300px;
-    }
-
-/* ---------- Products become vertical on small screens ---------- */
-
-    .products,
-    .product-container {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .product {
-        width: 70%;
-        max-width: 160px;
-    }
-}
-
-/* ---------- SMALL MOBILE DEVICES ---------- */
-
-@media screen and (max-width: 575.98px) {
-
-    header h1 {
-        font-size: 25px;
+        padding: 20px 12px;
     }
 
     header img {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
+        border-width: 3px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    /* Nav alignment for touch screens */
+    nav {
+        padding: 10px 12px;
+        border-radius: 30px;
+        margin: 0 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+        margin: 2px;
+    }
+
+    main {
+        width: 95%;
+        margin: 20px auto;
     }
 
     section {
         padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 12px;
     }
 
     section h2 {
-        font-size: 21px;
+        font-size: 22px;
+        padding-left: 8px;
     }
 
+    section h3 {
+        font-size: 18px;
+    }
+
+    /* Products layout aligned in 2 by 2 grid on mobile devices */
+    .products,
+    .product-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    .product {
+        width: calc(50% - 6px);
+        max-width: none;
+        min-height: 290px;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .product img {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 8px;
+    }
+
+    .product h3 {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+
+    .product .price {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .product select {
+        padding: 5px;
+        font-size: 12px;
+        width: 100%;
+        margin: 3px 0;
+    }
+
+    .product button {
+        padding: 8px 10px;
+        font-size: 13px;
+        width: 100%;
+        min-width: auto;
+        margin-top: 8px;
+    }
+
+    /* Form elements & buttons */
     button {
         width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
     }
 
     input,
     textarea,
     select {
-        font-size: 14px;
+        font-size: 16px; /* Prevents iOS auto-zoom on input focus */
+        padding: 12px;
+    }
+
+    /* Search bar container alignment */
+    .shop-tools,
+    main div[style*="display: flex"] {
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    #search,
+    .shop-tools input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Cart item responsive alignment */
+    .cart-item {
+        flex-direction: column;
+        align-items: stretch !important;
+        text-align: center;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .cart-item img {
+        margin: 0 auto;
     }
 
     iframe {
-        height: 250px;
+        height: 220px;
+    }
+
+    #toast {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+/* ---------- SMALL SMARTPHONES (Compact Androids & iPhones SE <= 400px) ---------- */
+@media screen and (max-width: 399.98px) {
+    header h1 {
+        font-size: 21px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 6px 10px;
     }
 
     .product {
-        width: 100%;
+        max-width: 100%;
     }
 }
