@@ -3,6 +3,7 @@
 `script.js` contains all client-side logic for BQS Web.
 
 ## Functions
+
 - `getCart()` / `saveCart()` - load/save cart from localStorage
 - `addToCart(id, name, price)` - add or increment product
 - `removeFromCart(id)` - remove product

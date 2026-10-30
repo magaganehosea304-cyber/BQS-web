@@ -204,10 +204,27 @@ function showToast(msg) {
   toast._t = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-// Enquiry form validation & submission with cart data
+// Enquiry form validation & submission with delivery handling and direct store email (`magaganehosea304@gmail.com`)
 function setupEnquiryForm() {
   const form = document.querySelector('form');
   if (!form) return;
+
+  const deliveryRadio = document.getElementById('delivery');
+  const pickupRadio = document.getElementById('pickup');
+  const deliveryContainer = document.getElementById('delivery-info-container');
+
+  function toggleDeliveryInfo() {
+    if (deliveryContainer) {
+      deliveryContainer.style.display = deliveryRadio && deliveryRadio.checked ? 'block' : 'none';
+    }
+  }
+
+  if (deliveryRadio && pickupRadio) {
+    deliveryRadio.addEventListener('change', toggleDeliveryInfo);
+    pickupRadio.addEventListener('change', toggleDeliveryInfo);
+    toggleDeliveryInfo(); // initial state check
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const name = form.fullname?.value.trim();
@@ -218,14 +235,47 @@ function setupEnquiryForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
     if (!/^\+?\d[\d\s-]{7,}$/.test(phone)) { alert('Please enter a valid phone number.'); return; }
 
+    const serviceRadio = form.querySelector('input[name="services"]:checked');
+    const serviceType = serviceRadio ? serviceRadio.value : 'pickup';
+    const deliveryAddress = form.querySelector('#delivery-address')?.value.trim() || '';
+
+    if (serviceType === 'delivery' && !deliveryAddress) {
+      alert('Please enter your delivery address for delivery service.');
+      return;
+    }
+
     const cart = getCart();
-    let summary = `Enquiry submitted successfully!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n`;
+    const storeEmail = 'magaganehosea304@gmail.com';
+    const subject = encodeURIComponent(`New Product Enquiry / Order from ${name} - Best Quality Store`);
+    
+    let body = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService Type: ${serviceType.toUpperCase()}\n`;
+    if (serviceType === 'delivery') {
+      body += `Delivery Address: ${deliveryAddress}\n`;
+    }
     if (cart.length > 0) {
-      summary += `\nOrdered Items:\n` + cart.map(i => `- ${i.name} x${i.qty} (R ${(i.price * i.qty).toLocaleString('en-ZA')})`).join('\n');
+      body += `\nOrdered Items:\n` + cart.map(i => `- ${i.name} x${i.qty} (R ${(i.price * i.qty).toLocaleString('en-ZA')})`).join('\n');
+      body += `\n\nTotal: R ${cartTotals(cart).total.toLocaleString('en-ZA')}`;
+    }
+    const userMsg = form.message?.value.trim();
+    if (userMsg) {
+      body += `\n\nAdditional Message:\n${userMsg}`;
+    }
+
+    const mailtoUrl = `mailto:${storeEmail}?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+    let summary = `Enquiry prepared successfully!\n\nYour email client is opening to send this order directly to the store at ${storeEmail}.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${serviceType.toUpperCase()}`;
+    if (serviceType === 'delivery') {
+      summary += `\nDelivery Address: ${deliveryAddress}`;
+    }
+    if (cart.length > 0) {
       summary += `\n\nTotal: R ${cartTotals(cart).total.toLocaleString('en-ZA')}`;
     }
+
     alert(summary);
+    window.location.href = mailtoUrl;
+
     form.reset();
+    toggleDeliveryInfo();
     localStorage.removeItem(CART_KEY);
     updateCartUI();
   });
