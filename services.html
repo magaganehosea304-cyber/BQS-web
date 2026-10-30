@@ -68,9 +68,13 @@
                 and technology products.
             </p>
 
-            <p style="margin-top: 15px;">
-                <input type="text" id="search" placeholder="Search for shoes, iPhones..." style="padding: 10px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
-            </p>
+            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <div style="position: relative; display: inline-block; max-width: 320px; width: 100%;">
+                    <button type="button" id="clear-search-btn" title="Clear search" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 16px; cursor: pointer; color: #888; display: none; padding: 0 5px; z-index: 10;">✕</button>
+                    <input type="text" id="search" placeholder="Search for shoes, iPhones..." style="padding: 10px 10px 10px 32px; width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+                </div>
+                <button type="button" id="search-btn" style="padding: 10px 20px; font-size: 16px; width: auto;">Search</button>
+            </div>
 
         </section>
 

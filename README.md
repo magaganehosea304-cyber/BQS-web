@@ -2,12 +2,12 @@
 
 ## Student Information
 
-**Student Name:** [Magagane Masesohlo Hosea]  
-**Student Number:** [ST10511877]  
-**Course/Programme:** [Web Development]  
-**Institution:** [DIS1]  
-**Project:** Best Quality Store Website  
-**Date:** October 2026  
+**Student Name:** [Magagane Masesohlo Hosea]
+**Student Number:** [ST10511877]
+**Course/Programme:** [Web Development]
+**Institution:** [DIS1]
+**Project:** Best Quality Store Website
+**Date:** 14 August 2026
 
 ---
 
@@ -15,15 +15,17 @@
 
 **Best Quality Store** is an e-commerce website designed for a retail store that sells a variety of quality products, including **shoes and iPhones**.
 
-The purpose of the website is to provide customers with an easy and convenient way to view the products offered by the store, select options, manage a shopping cart, and submit orders or enquiries.
+The purpose of the website is to provide customers with an easy and convenient way to view the products offered by the store and obtain information about the available products and services.
 
-The website is built using HTML, CSS, and JavaScript. It contains multiple pages that allow users to navigate through the store, learn more about the business, view products and services, manage their shopping cart, submit enquiries, and find the physical location of the store.
+The website is being developed using HTML and other web technologies. It will contain multiple pages that allow users to navigate through the store, learn more about the business, view products and services, submit enquiries, and find the physical location of the store.
+
+The project will be developed in different parts, with additional functionality being added as the project progresses.
 
 ---
 
 ## Website Goals and Objectives
 
-The main goal of the Best Quality Store website is to create a professional, interactive e-commerce web presence for the business.
+The main goal of the Best Quality Store website is to create a professional, user-friendly online presence for the business.
 
 ### Objectives
 
@@ -32,74 +34,145 @@ The main goal of the Best Quality Store website is to create a professional, int
 3. Display the different products sold by the store.
 4. Allow customers to view product categories such as:
    - Shoes
-   - iPhones (Standard, Pro, Pro Max)
+   - iPhones
+
 5. Provide product selection options where applicable.
 6. Allow customers to select shoe sizes.
-7. Allow customers to select different iPhone models (Standard, Pro, Pro Max) and storage options with dynamic pricing.
-8. Implement an interactive shopping cart with LocalStorage persistence.
-9. Implement real-time product search functionality.
-10. Provide contact information and store locations.
-11. Allow customers to submit validated enquiries and orders.
+7. Allow customers to select different iPhone models and storage options.
+8. Provide contact information for the business.
+9. Provide the physical location of the store.
+10. Allow customers to submit enquiries.
+11. Make the website easy to navigate.
+12. Develop the website in stages according to the project requirements.
 
 ---
 
 ## Key Features and Functionality
 
 ### 1. Home Page
-Introduces customers to Best Quality Store and provides navigation to other sections.
+
+The home page introduces customers to Best Quality Store and provides navigation to the other sections of the website.
+
+It will contain information about the business and highlight some of the products available.
 
 ### 2. About Page
-Provides information about Best Quality Store, its purpose, and product offerings.
+
+The About page provides information about Best Quality Store, including the purpose of the business and the products it offers.
 
 ### 3. Products and Services
-Displays product categories:
-- Shoes (with size selection)
-- iPhones (with Model: Standard, Pro, Pro Max & Storage selection with dynamic pricing)
 
-### 4. Interactive Shopping Cart (JavaScript)
-- Add products with customized options (sizes, models, storage) to cart.
-- Persistent cart storage using browser `localStorage`.
-- Live quantity updates and item removal.
-- Clear Cart functionality.
-- Real-time total calculation.
+The website will provide information about the products and services available at Best Quality Store.
 
-### 5. Product Search
-Real-time filtering of products as the user types in the search bar.
+Product categories include:
 
-### 6. Enquiry & Order Form
-Form validation and order summary generation upon submission.
+- Shoes
+- iPhones
+
+### 4. Shoe Size Selection
+
+Customers will be able to select the size of shoes they want before making an enquiry or purchasing the product.
+
+Example sizes include:
+
+- Size 3
+- Size 4
+- Size 5
+- Size 6
+- Size 7
+- Size 8
+- Size 9
+- Size 10
+- Size 11
+- Size 12
+
+### 5. iPhone Model and Storage Selection
+
+Customers will be able to select an iPhone model and its available storage capacity.
+
+For example:
+
+- iPhone 13 — 128GB / 256GB
+- iPhone 14 — 128GB / 256GB
+- iPhone 15 — 128GB / 256GB / 512GB
+- iPhone 16 — 128GB / 256GB / 512GB
+
+The available options may be updated as the store's stock changes.
+
+### 6. Contact Page
+
+The Contact page will provide customers with information on how to communicate with Best Quality Store.
+
+This may include:
+
+- Telephone number
+- Email address
+- Physical address
+- Business hours
+- Social media information
+
+### 7. Store Location
+
+The website will provide the location of Best Quality Store so that customers can find the physical store.
+
+A map or location link may be added as the project develops.
+
+### 8. Enquiry Page
+
+The Enquiry page will allow customers to submit questions or requests regarding products and services.
+
+Customers may provide information such as:
+
+- Name
+- Email address
+- Contact number
+- Product of interest
+- Product size or specification
+- Message/enquiry
 
 ---
 
 ## Timeline and Milestones
 
-| Stage  | Milestone                                | Status    |
-| ------ | ---------------------------------------- | --------- |
-| Part 1 | Project planning and website structure   | Completed |
-| Part 1 | Create HTML pages                        | Completed |
-| Part 1 | Create navigation between pages          | Completed |
-| Part 1 | Add business and product information     | Completed |
-| Part 1 | Create README.md                         | Completed |
-| Part 2 | Improve website design and functionality | Completed |
-| Part 2 | Add CSS styling                          | Completed |
-| Part 3 | Add JavaScript interactivity & Cart      | Completed |
-| Part 3 | Final testing and documentation          | Completed |
+| Stage  | Milestone                                | Status                |
+| ------ | ---------------------------------------- | --------------------- |
+| Part 1 | Project planning and website structure   | Completed/In Progress |
+| Part 1 | Create HTML pages                        | Completed/In Progress |
+| Part 1 | Create navigation between pages          | Completed/In Progress |
+| Part 1 | Add business and product information     | Completed/In Progress |
+| Part 1 | Create README.md                         | Completed/In Progress |
+| Part 2 | Improve website design and functionality | Completed/In Progress |
+| Part 2 | Add additional product functionality     | Completed/In Progress |
+| Part 3 | Final improvements and testing           | Completed/In Progress |
+| Part 3 | Final documentation and submission       | Completed/In Progress |
 
 ---
 
 ## Part 1 Details
-Part 1 established the basic HTML structure and content of the Best Quality Store website (`index.html`, `about.html`, `services.html`, `contact.html`, `enquiry.html`).
+
+Part 1 focuses on establishing the basic structure and content of the Best Quality Store website.
+
+The website includes the following main pages:
+
+- `index.html` — Home page
+- `about.html` — About the business
+- `services.html` — Products and services
+- `contact.html` — Contact information and store location
+- `enquiry.html` — Customer enquiry form
+
+The first part focuses primarily on the structure, navigation, content and basic functionality of the website.
 
 # Part 2 – CSS and Website Design
-Part 2 introduced CSS styling (`css/style.css`) to enhance layout, colors, typography, and visual presentation.
 
-# Part 3 – JavaScript Functionality
-Part 3 added full client-side interactivity using `js/script.js`:
-- **Shopping Cart Management:** Add items, adjust quantities, remove items, clear cart, and calculate totals with `localStorage` persistence.
-- **Dynamic Pricing & Variants:** Real-time price updates when selecting iPhone models (Standard, Pro, Pro Max) and storage options.
-- **Product Search:** Instant search filter across all products.
-- **Form Validation:** Client-side validation for customer enquiries and order submissions.
-- **UI Notifications:** Toast alerts for cart actions.
+## CSS Styling
+
+Part 2 introduced CSS styling to improve the appearance and usability of the Best Quality Store website.
+
+The website uses an external CSS stylesheet:
+
+````text
+css/style.css
+
+Parts 3 will introduce additional improvements and functionality in future submissions or edits.
 
 ---
 
@@ -118,28 +191,122 @@ Best-Quality-Store/
 ├── images/
 │   └── product-images
 │
-├── css/
+└── css/
 │   └── style.css
 │
 └── js/
     └── script.js
+
+
+````
+
+---
+
+## Sitemap
+
+```text
+                    Best Quality Store
+                           |
+          +----------------+----------------+
+          |                |                |
+        Home             About           Services
+          |                                 |
+          |                           +-----+------+
+          |                           |            |
+          |                        Shoes        iPhone
+          |
+          |
+          |
+     +----+-------+
+     |            |
+   Contact      Enquiry
+     |
+ Store Location
 ```
 
 ---
 
 ## Changelog
 
-### Version 2.0 — October 2026 (Part 3 Update)
-- Added full JavaScript interactivity in `js/script.js`.
-- Implemented `localStorage` shopping cart with add, remove, quantity update, and clear cart features.
-- Added iPhone Model selection (Standard, Pro, Pro Max) from iPhone 11 to 17 with dynamic pricing.
-- Added real-time product search filter.
-- Added enquiry form validation and order summary alerts.
+### Version 1.0 — August 2026
 
-### Version 1.0 — August 2026 (Parts 1 & 2)
-- Initial HTML structure and CSS styling.
+- Created the Best Quality Store project.
+- Created the basic website structure.
+- Added the home page.
+- Added the About page.
+- Added the Services page.
+- Added the Contact page.
+- Added the Enquiry page.
+- Added navigation between website pages.
+- Added information about the products sold by the store.
+- Added shoe size selection functionality.
+- Added iPhone model selection.
+- Added iPhone storage selection.
+- Added store location information.
+- Created the initial README.md documentation.
+
+### Future Updates
+
+Future versions of the website may include:
+
+- Improved website design.
+- Shopping cart functionality.
+- Product search.
+- Product filtering.
+- Product pricing.
+- Improved mobile responsiveness.
+- Online ordering.
+- Additional product categories.
+- Improved enquiry functionality.
+- Customer feedback functionality.
+
+---
+
+## Git and GitHub
+
+GitHub will be used to store and manage the project source code.
+
+Changes will be committed regularly using descriptive commit messages.
+
+Example commit messages include:
+
+```text
+Initial project setup
+Added homepage
+Added About page
+Added Services page
+Added Contact page
+Added Enquiry form
+Added product selection
+Updated README documentation
+Fixed website navigation
+Updated product information
+```
+
+The local project will be committed and pushed to the remote GitHub repository regularly to ensure that changes are safely stored and tracked.
+
+---
+
+## References
+
+All external information, images, resources and sources used in the development of the website will be properly referenced according to the recognised referencing style required by the institution.
+
+Examples of sources that may be referenced include:
+
+- Product information sources
+- Image sources
+- HTML documentation
+- Web development tutorials
+- Design resources
+
+**Note:** All sources actually used in the final website should be added to this section with their complete reference information.
 
 ---
 
 ## Conclusion
-The Best Quality Store website provides a complete e-commerce experience with responsive design, product customization (sizes, models, storage), dynamic pricing, live search, and shopping cart management powered by JavaScript.
+
+The Best Quality Store website is designed to provide customers with a simple and convenient way to learn about the business and its products.
+
+The website will showcase shoes and iPhones while providing useful functionality such as shoe-size selection and iPhone model and storage selection.
+
+The project will continue to be improved through Parts 2 and 3, with additional functionality, testing, documentation and design improvements being implemented before the final submission.

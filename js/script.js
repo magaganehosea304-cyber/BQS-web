@@ -204,8 +204,9 @@ function showToast(msg) {
   toast._t = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-// Enquiry form validation & submission with delivery handling and direct store email (`magaganehosea304@gmail.com`)
+// Enquiry form validation, cost/availability response processing, and direct store email (`magaganehosea304@gmail.com`)
 function setupEnquiryForm() {
+  if (!location.pathname.includes('cart.html')) return;
   const form = document.querySelector('form');
   if (!form) return;
 
@@ -230,6 +231,7 @@ function setupEnquiryForm() {
     const name = form.fullname?.value.trim();
     const email = form.email?.value.trim();
     const phone = form.phone?.value.trim();
+    const enquiryType = form.querySelector('#enquiry-type')?.value || 'Product / Service Enquiry';
     
     if (!name) { alert('Please enter your full name.'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
@@ -245,16 +247,31 @@ function setupEnquiryForm() {
     }
 
     const cart = getCart();
+    const { total } = cartTotals(cart);
+
+    let responseAspect = '';
+    if (enquiryType.includes('Product')) {
+      responseAspect = cart.length > 0 
+        ? `Estimated Total Cost: R ${total.toLocaleString('en-ZA')} | Availability: In stock, ready for ${serviceType}.`
+        : `Product Availability: Available in store and online. Standard delivery or pickup options available.`;
+    } else if (enquiryType.includes('Sponsorship')) {
+      responseAspect = `Sponsorship Status: Application received. Our investment & partnership team will contact you regarding tier costs and availability.`;
+    } else if (enquiryType.includes('Volunteer')) {
+      responseAspect = `Volunteer Application: Received successfully. Opportunities are currently open in our Polokwane / Mankweng store network.`;
+    } else {
+      responseAspect = `Status: Enquiry processed successfully. Availability and fulfillment confirmed.`;
+    }
+
     const storeEmail = 'magaganehosea304@gmail.com';
-    const subject = encodeURIComponent(`New Product Enquiry / Order from ${name} - Best Quality Store`);
+    const subject = encodeURIComponent(`${enquiryType} from ${name} - Best Quality Store`);
     
-    let body = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService Type: ${serviceType.toUpperCase()}\n`;
+    let body = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nEnquiry Type: ${enquiryType}\nService Preference: ${serviceType.toUpperCase()}\n`;
     if (serviceType === 'delivery') {
       body += `Delivery Address: ${deliveryAddress}\n`;
     }
     if (cart.length > 0) {
-      body += `\nOrdered Items:\n` + cart.map(i => `- ${i.name} x${i.qty} (R ${(i.price * i.qty).toLocaleString('en-ZA')})`).join('\n');
-      body += `\n\nTotal: R ${cartTotals(cart).total.toLocaleString('en-ZA')}`;
+      body += `\nCart Items:\n` + cart.map(i => `- ${i.name} x${i.qty} (R ${(i.price * i.qty).toLocaleString('en-ZA')})`).join('\n');
+      body += `\n\nCalculated Total Cost: R ${total.toLocaleString('en-ZA')}`;
     }
     const userMsg = form.message?.value.trim();
     if (userMsg) {
@@ -263,14 +280,7 @@ function setupEnquiryForm() {
 
     const mailtoUrl = `mailto:${storeEmail}?subject=${subject}&body=${encodeURIComponent(body)}`;
 
-    let summary = `Enquiry prepared successfully!\n\nYour email client is opening to send this order directly to the store at ${storeEmail}.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${serviceType.toUpperCase()}`;
-    if (serviceType === 'delivery') {
-      summary += `\nDelivery Address: ${deliveryAddress}`;
-    }
-    if (cart.length > 0) {
-      summary += `\n\nTotal: R ${cartTotals(cart).total.toLocaleString('en-ZA')}`;
-    }
-
+    let summary = `Enquiry Processed Successfully!\n\n${responseAspect}\n\nYour email client is opening to send this enquiry to ${storeEmail}.`;
     alert(summary);
     window.location.href = mailtoUrl;
 
@@ -281,17 +291,86 @@ function setupEnquiryForm() {
   });
 }
 
-// Product search and filter helper
+// Contact form validation, compilation into email, and direct store email (`magaganehosea304@gmail.com`)
+function setupContactForm() {
+  if (!location.pathname.includes('contact.html')) return;
+  const form = document.querySelector('main section form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = form.fullname?.value.trim();
+    const email = form.email?.value.trim();
+    const phone = form.phone?.value.trim();
+    const messageType = form.querySelector('#message-type')?.value || 'General Inquiry';
+    const message = form.message?.value.trim();
+
+    if (!name) { alert('Please enter your full name.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+    if (!/^\+?\d[\d\s-]{7,}$/.test(phone)) { alert('Please enter a valid phone number.'); return; }
+    if (!message) { alert('Please enter your message.'); return; }
+
+    const storeEmail = 'magaganehosea304@gmail.com';
+    const subject = encodeURIComponent(`General Message (${messageType}) from ${name} - Best Quality Store`);
+    const body = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage Type: ${messageType}\n\nMessage:\n${message}`;
+
+    const mailtoUrl = `mailto:${storeEmail}?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+    alert(`Message validated successfully!\n\nYour email client is opening to send your ${messageType.toLowerCase()} message directly to ${storeEmail}.`);
+    window.location.href = mailtoUrl;
+
+    form.reset();
+  });
+}
+
+// Product search and filter helper with search button, Enter key, and clear (cross) button support on the left
 function setupSearch() {
   const input = document.getElementById('search');
+  const btn = document.getElementById('search-btn');
+  const clearBtn = document.getElementById('clear-search-btn');
   if (!input) return;
-  input.addEventListener('input', function () {
-    const q = this.value.toLowerCase();
+
+  function updateClearButton() {
+    if (clearBtn) {
+      clearBtn.style.display = input.value.length > 0 ? 'block' : 'none';
+    }
+  }
+
+  function performSearch() {
+    const q = input.value.toLowerCase().trim();
+    let matchCount = 0;
     document.querySelectorAll('.product').forEach(p => {
       const text = p.textContent.toLowerCase();
-      p.style.display = text.includes(q) ? '' : 'none';
+      const isMatch = text.includes(q);
+      p.style.display = isMatch ? '' : 'none';
+      if (isMatch) matchCount++;
     });
+    updateClearButton();
+    if (q) {
+      showToast(`Found ${matchCount} product(s) matching "${input.value}"`);
+    }
+  }
+
+  input.addEventListener('input', performSearch);
+  if (btn) {
+    btn.addEventListener('click', performSearch);
+  }
+  input.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch();
+    }
   });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      input.value = '';
+      performSearch();
+      input.focus();
+    });
+  }
+
+  updateClearButton();
 }
 
 // Highlight active navigation link
@@ -309,6 +388,7 @@ function markActiveNav() {
 document.addEventListener('DOMContentLoaded', function () {
   updateCartUI();
   setupEnquiryForm();
+  setupContactForm();
   setupSearch();
   markActiveNav();
 

@@ -74,6 +74,20 @@
 
             <form>
 
+                <!-- Enquiry Type -->
+                <section>
+                    <h3>Enquiry Type</h3>
+                    <p>
+                        <label for="enquiry-type">What is your enquiry regarding?</label><br>
+                        <select id="enquiry-type" name="enquiry_type" style="padding: 10px; width: 100%; border: 2px solid #d8dee9; border-radius: 8px;">
+                            <option value="Product / Service Enquiry">Product / Service Enquiry</option>
+                            <option value="Sponsorship Opportunity">Sponsorship Opportunity</option>
+                            <option value="Volunteer Application">Volunteer Application</option>
+                            <option value="Bulk Order & Partnership">Bulk Order &amp; Partnership</option>
+                        </select>
+                    </p>
+                </section>
+
                 <!-- Personal Information -->
                 <section>
 
@@ -126,107 +140,6 @@
 
                 </section>
 
-                <!-- Order Information -->
-                <section>
-
-                    <h3>Order Information</h3>
-
-                    <p>
-
-                        <label for="quantity">
-                            Number of Items:
-                        </label>
-
-                        <br>
-
-                        <input type="number"
-                               id="quantity"
-                               name="quantity"
-                               min="1"
-                               max="25">
-
-                    </p>
-
-                </section>
-
-                <!-- Contact Preferences -->
-                <section>
-
-                    <h3>Contact Preferences</h3>
-
-                    <p>
-                        Preferred Contact Method:
-                    </p>
-
-                    <input type="radio"
-                           id="emailcontact"
-                           name="contactmethod"
-                           value="email">
-
-                    <label for="emailcontact">
-                        Email
-                    </label>
-
-                    <br>
-
-                    <input type="radio"
-                           id="phonecontact"
-                           name="contactmethod"
-                           value="phone">
-
-                    <label for="phonecontact">
-                        Telephone
-                    </label>
-
-                </section>
-
-                <br>
-
-                <!-- Additional Services -->
-                <section>
-
-                    <h3>Would you like...</h3>
-
-                    <p>
-
-                        <input type="radio"
-                               id="delivery"
-                               name="services"
-                               value="delivery">
-
-                        <label for="delivery">
-                            Delivery
-                        </label>
-
-                        <br>
-
-                        <input type="radio"
-                               id="pickup"
-                               name="services"
-                               value="pickup"
-                               checked>
-
-                        <label for="pickup">
-                            Pickup
-                        </label>
-
-                    </p>
-
-                    <!-- Delivery Information Container (requires delivery address when delivery is selected) -->
-                    <div id="delivery-info-container" style="display: none; margin-top: 15px; text-align: left;">
-                        <label for="delivery-address">
-                            Delivery Address (Required for Delivery):
-                        </label>
-                        <br>
-                        <textarea id="delivery-address"
-                                  name="delivery_address"
-                                  rows="3"
-                                  mailto="magaganehosea@gmail.com"
-                                  placeholder="Enter your street address, suburb, city and postal code"></textarea>
-                    </div>
-
-                </section>
-
                 <br>
 
                 <!-- Message -->
@@ -246,7 +159,8 @@
                                   name="message"
                                   rows="6"
                                   cols="40"
-                                  placeholder="Enter your message here (optional)"></textarea>
+                                  placeholder="Enter your message here">
+                                </textarea>
 
                     </p>
 

@@ -63,9 +63,114 @@
                         <input type="email" id="checkout-email" name="email" required placeholder="Enter your email address">
                     </p>
                     <p style="text-align: left;">
-                        <label for="checkout-phone">Phone Number:</label><br>
-                        <input type="tel" id="checkout-phone" name="phone" required placeholder="Enter your phone number">
+                        <label for="checkout-phone">
+                            Phone Number:
+                        </label>
+                        
+                        <br>
+
+                        <input type="tel" 
+                                 id="checkout-phone" 
+                                 name="phone" 
+                                 required placeholder="Enter your phone number">
                     </p>
+
+                    <P>
+                        <label for="quantity">
+                            Number of Items
+                        </label>
+
+                        <br>
+
+                        <input type="number"
+                                 id="quantity"
+                                 name="quantity"
+                                 min="1"
+                                 max="25"
+                                 style="width: 100px; padding: 5px; border: 2px solid #d8dee9; border-radius: 8px;"
+                        >
+                    </P>
+
+                    <!-- Contact Preferences -->
+                <section>
+
+                    <h3>Contact Preferences</h3>
+
+                    <p>
+                        Preferred Contact Method:
+                    </p>
+
+                    <input type="radio"
+                           id="emailcontact"
+                           name="contactmethod"
+                           value="email">
+
+                    <label for="emailcontact">
+                        Email
+                    </label>
+
+                    <br>
+
+                    <input type="radio"
+                           id="phonecontact"
+                           name="contactmethod"
+                           value="phone">
+
+                    <label for="phonecontact">
+                        Telephone
+                    </label>
+
+                </section>
+
+                <br>
+
+                <!-- Additional Services -->
+                <section>
+
+                    <h3>Would you like...</h3>
+
+                    <p>
+
+                        <input type="radio"
+                               id="delivery"
+                               name="services"
+                               value="delivery">
+
+                        <label for="delivery">
+                            Delivery
+                        </label>
+
+                        <br>
+
+                        <input type="radio"
+                               id="pickup"
+                               name="services"
+                               value="pickup"
+                               checked>
+
+                        <label for="pickup">
+                            Pickup
+                        </label>
+
+                    </p>
+
+                    <!-- Delivery Information Container (requires delivery address when delivery is selected) -->
+                    <div id="delivery-info-container" style="display: none; margin-top: 15px; text-align: left;">
+                        <label for="delivery-address">
+                            Delivery Address (Required for Delivery):
+                        </label>
+                        <br>
+                        <textarea id="delivery-address"
+                                  name="delivery_address"
+                                  rows="3"
+                                  mailto="magaganehosea@gmail.com"
+                                  placeholder="Enter your street address, suburb, city and postal code"></textarea>
+                    </div>
+
+                </section>
+
+                <br>
+                
                     <p style="text-align: left;">
                         <label for="checkout-address">Delivery Address / Notes:</label><br>
                         <textarea id="checkout-address" name="address" placeholder="Enter delivery address or pickup instructions"></textarea>
