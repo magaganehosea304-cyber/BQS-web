@@ -11,9 +11,13 @@
 
     <header>
         <p>
-            <img src="images/Logo.jpg" alt="Best Quality Store Logo" width="120">
+            <img src="images/Logo.jpg" 
+                 alt="Best Quality Store Logo" 
+                 width="120">
         </p>
+
         <h1>Shopping Cart & Checkout</h1>
+
         <p>
             <em>Review your items and complete your payment.</em>
         </p>
@@ -169,12 +173,6 @@
 
                 </section>
 
-                <br>
-                
-                    <p style="text-align: left;">
-                        <label for="checkout-address">Delivery Address / Notes:</label><br>
-                        <textarea id="checkout-address" name="address" placeholder="Enter delivery address or pickup instructions"></textarea>
-                    </p>
                 </section>
 
                 <section>
@@ -208,19 +206,24 @@
                         <label for="pay-eft">EFT / Direct Bank Transfer</label>
                     </div>
 
+                    <div id="eft-details-box" style="background: #f4f7fb; padding: 15px; border-radius: 8px; margin-bottom: 15px; text-align: left; display: none;">
+                        <h4 style="color: #071a3d; margin-bottom: 8px;">Store Banking Details (Capitec):</h4>
+                        <p style="margin: 4px 0;"><strong>Bank:</strong> Capitec</p>
+                        <p style="margin: 4px 0;"><strong>Branch Code:</strong> 470010</p>
+                        <p style="margin: 4px 0;"><strong>Account Number:</strong> 2244826267</p>
+                        <p style="margin: 4px 0;"><strong>Account Holder:</strong> MH MAGAGANE</p>
+                        <p style="margin-top: 8px; font-size: 13px; color: #555; font-style: italic;">Please use your full name or order reference as the payment reference when transferring.</p>
+                    </div>
+
                     <div style="text-align: left; margin: 10px 0;">
                         <input type="radio" id="pay-cash" name="payment_method" value="Cash on Delivery / Pickup">
                         <label for="pay-cash">Cash on Delivery / Store Pickup</label>
                     </div>
 
-                    <div style="text-align: left; margin: 10px 0;">
-                        <input type="radio" id="pay-mobile" name="payment_method" value="Mobile Money">
-                        <label for="pay-mobile">Mobile Money / Instant EFT</label>
-                    </div>
                 </section>
 
                 <p style="margin-top: 20px;">
-                    <button type="submit" style="font-size: 18px; padding: 15px 30px;">Complete Payment & Place Order</button>
+                    <button type="submit" style="font-size: 18px; padding: 15px 30px;">Place Order</button>
                 </p>
             </form>
         </section>
@@ -234,18 +237,6 @@
     <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const payRadios = document.querySelectorAll('input[name="payment_method"]');
-            const cardBox = document.getElementById('card-details-box');
-            payRadios.forEach(radio => {
-                radio.addEventListener('change', function() {
-                    if (this.value === 'Credit/Debit Card') {
-                        cardBox.style.display = 'block';
-                    } else {
-                        cardBox.style.display = 'none';
-                    }
-                });
-            });
-
             const checkoutForm = document.getElementById('checkout-form');
             if (checkoutForm) {
                 checkoutForm.addEventListener('submit', function(e) {

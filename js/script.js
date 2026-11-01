@@ -204,9 +204,9 @@ function showToast(msg) {
   toast._t = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-// Enquiry form validation, cost/availability response processing, and direct store email (`magaganehosea304@gmail.com`)
+// Enquiry form validation, cost/availability response processing, and direct store email (`magaganehosea304@gmail.com``)
 function setupEnquiryForm() {
-  if (!location.pathname.includes('cart.html')) return;
+  if (!location.pathname.includes('enquiry.html')) return;
   const form = document.querySelector('form');
   if (!form) return;
 
@@ -234,8 +234,8 @@ function setupEnquiryForm() {
     const enquiryType = form.querySelector('#enquiry-type')?.value || 'Product / Service Enquiry';
     
     if (!name) { alert('Please enter your full name.'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
-    if (!/^\+?\d[\d\s-]{7,}$/.test(phone)) { alert('Please enter a valid phone number.'); return; }
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    if (!phone || phone.replace(/\D/g, '').length < 7) { alert('Please enter a valid phone number.'); return; }
 
     const serviceRadio = form.querySelector('input[name="services"]:checked');
     const serviceType = serviceRadio ? serviceRadio.value : 'pickup';
@@ -280,8 +280,6 @@ function setupEnquiryForm() {
 
     const mailtoUrl = `mailto:${storeEmail}?subject=${subject}&body=${encodeURIComponent(body)}`;
 
-    let summary = `Enquiry Processed Successfully!\n\n${responseAspect}\n\nYour email client is opening to send this enquiry to ${storeEmail}.`;
-    alert(summary);
     window.location.href = mailtoUrl;
 
     form.reset();
@@ -291,7 +289,7 @@ function setupEnquiryForm() {
   });
 }
 
-// Contact form validation, compilation into email, and direct store email (`magaganehosea304@gmail.com`)
+// Contact form validation, compilation into email, and direct store email (`magaganehosea304@gmail`)
 function setupContactForm() {
   if (!location.pathname.includes('contact.html')) return;
   const form = document.querySelector('main section form');
@@ -306,11 +304,11 @@ function setupContactForm() {
     const message = form.message?.value.trim();
 
     if (!name) { alert('Please enter your full name.'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
-    if (!/^\+?\d[\d\s-]{7,}$/.test(phone)) { alert('Please enter a valid phone number.'); return; }
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    if (!phone || phone.replace(/\D/g, '').length < 7) { alert('Please enter a valid phone number.'); return; }
     if (!message) { alert('Please enter your message.'); return; }
 
-    const storeEmail = 'magaganehosea304@gmail.com';
+    const storeEmail = 'magaganehosea304@gmail.com`';
     const subject = encodeURIComponent(`General Message (${messageType}) from ${name} - Best Quality Store`);
     const body = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage Type: ${messageType}\n\nMessage:\n${message}`;
 
@@ -373,6 +371,40 @@ function setupSearch() {
   updateClearButton();
 }
 
+// Setup payment methods on cart/checkout page (shows card details or pops up/displays store banking details for EFT)
+function setupCheckoutPayment() {
+  const payRadios = document.querySelectorAll('input[name="payment_method"]');
+  const cardBox = document.getElementById('card-details-box');
+  const eftBox = document.getElementById('eft-details-box');
+
+  if (payRadios.length === 0) return;
+
+  payRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.value === 'Credit/Debit Card') {
+        if (cardBox) cardBox.style.display = 'block';
+        if (eftBox) eftBox.style.display = 'none';
+      } else if (this.value === 'EFT / Bank Transfer') {
+        if (cardBox) cardBox.style.display = 'none';
+        if (eftBox) eftBox.style.display = 'block';
+        alert("Store Banking Details:\n\nBank: Capitec\nBranch Code: 470010\nAccount Number: 2244826267\nAccount Holder: MH MAGAGANE");
+      } else {
+        if (cardBox) cardBox.style.display = 'none';
+        if (eftBox) eftBox.style.display = 'none';
+      }
+    });
+  });
+
+  const checkedRadio = document.querySelector('input[name="payment_method"]:checked');
+  if (checkedRadio) {
+    if (checkedRadio.value === 'Credit/Debit Card' && cardBox) {
+      cardBox.style.display = 'block';
+    } else if (checkedRadio.value === 'EFT / Bank Transfer' && eftBox) {
+      eftBox.style.display = 'block';
+    }
+  }
+}
+
 // Highlight active navigation link
 function markActiveNav() {
   const page = location.pathname.split('/').pop() || 'index.html';
@@ -390,6 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupEnquiryForm();
   setupContactForm();
   setupSearch();
+  setupCheckoutPayment();
   markActiveNav();
 
   window.updateIPhonePrice = updateIPhonePrice;
